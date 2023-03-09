@@ -8,25 +8,23 @@ def menu():
 
 def encode():
     password = input("Please enter your password to encode: ")
-    old_password = password
+    new_password = ""
     for i in range(0, len(password)):
         int_changer = int(password[i])
         int_changer += 3
-        str_int_changer = str(int_changer)
-        password = password.replace(password[i], str_int_changer)
+        new_password += str(int_changer)
     print("Your password has been encoded and stored!")
     print(" ")
-    return password
+    return new_password
 
 
 def decode(password):
-    new_password = password
+    old_password = ""
     for i in range(0, len(password)):
         int_changer = int(password[i])
         int_changer -= 3
-        str_int_changer = str(int_changer)
-        password = password.replace(password[i],str_int_changer)
-    print("The encoded password is " + new_password + " , and the original password is " + password + ".")
+        old_password += str(int_changer)
+    print("The encoded password is " + password + ", and the original password is " + old_password + ".")
 
 
 def main():
